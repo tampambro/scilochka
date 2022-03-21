@@ -1,0 +1,138 @@
+/* Fonts */
+@font-face {
+	font-family: "main-regular";
+	src: url(./fonts/RobotoMono-Regular.woff) format('woff');
+	src: url(./fonts/RobotoMono-Regular.woff2) format('woff2');
+	src: url(./fonts/RobotoMono-Regular.ttf) format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}
+/* _____ */
+
+:root {
+	box-sizing: border-box;
+
+	/* colors */
+	--main-blue: rgba(67, 142, 217, 1);
+	--transparent-blue: rgba(67, 142, 217, .3);
+	--blue: rgba(67, 142, 217, 1);
+	--main-color-separate: black;
+	--text-in-separate: rgba(255,255,255,.75);
+	--main-pink: rgb(167, 81, 248);
+	--transparent-pink: rgba(167, 81, 248, .3);
+	--pink: rgba(167, 81, 248, 1);
+	--success-green: #73AF55;
+	--fail-red: #D06079;
+	--warning-yellow: #ffeb3b;
+	--main-font-color: black;
+}
+
+*,
+::before,
+::after {
+	box-sizing: inherit;
+	outline: none;
+}
+
+html, body {
+	color: var(--main-font-color);
+	font-family: "main-regular";
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 8px;
+}
+
+a {
+	position: relative;
+	color: var(--main-font-color);
+	text-decoration: none;;
+}
+
+.underline-link::after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	background: var(--main-blue);
+	width: 100%;
+	height: 1.5px;
+	transition: all .3s;
+}
+
+.underline-link:hover::after {
+	background: var(--main-pink);
+}
+
+p {
+	margin: 0;
+}
+
+pre {
+	margin: 0;
+}
+
+hr {
+	border: 2px solid var(--main-blue);
+	background: var(--main-blue);
+	border-radius: 5px;
+	margin: 8px 0 16px;
+}
+
+.focus-elem.pink:focus {
+	border-color: transparent !important;
+	background: var(--transparent-pink);
+}
+
+.focus-elem.blue:focus {
+	border-color: transparent !important;
+	background: var(--transparent-blue);
+}
+
+.common-btn {
+	border: 4px solid var(--main-color-separate);
+	background: var(--main-color-separate);
+	color: var(--text-in-separate);
+	font-size: 1.4em;
+	transition: border .3s;
+	height: 40px;
+}
+
+.common-btn:hover {
+	border: 4px solid var(--main-blue);
+}
+
+.common-btn:active {
+	color: var(--main-pink);
+	border: 4px solid var(--main-pink);
+}
+
+.overall-wrapper {
+	width: 100%;
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.inner-wrapper {
+	width: 700px;
+	margin: 0 auto;
+	padding: 80px 50px;
+}
+
+.svg-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 545px) {
+	.inner-wrapper {
+		width: 100%;
+		padding: 50px 10px;
+	}
+}

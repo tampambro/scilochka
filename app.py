@@ -44,7 +44,7 @@ def getArchive():
   archive = models.Scilochka.query.all()
   return jsonify(archive)
 
-@app.route('/', defaults={'path': '', 'path_2': ''})
+@app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def catch_all(path):
   return render_template('index.html')

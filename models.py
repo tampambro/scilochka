@@ -21,4 +21,4 @@ class Scilochka(app.db.Model):
     super().__init__(*args, **kwargs)
 
   def __repr__(self):
-    return f'<Task id: {self.id} - {self.title}'
+    return f'<Task id: {self.id} - {self.title}>'

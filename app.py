@@ -2,6 +2,7 @@ from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 
 from dotenv import load_dotenv
+from datetime import datetime, timezone
 
 from config import Config
 
@@ -26,7 +27,7 @@ def create_scilochky():
   form = ScilochkaForm(data=user_input)
 
   if form.validate():
-    scilochka = models.Scilochka(title=form.title.data, content=form.content.data)
+    scilochka = models.Scilochka(title=form.title.data, content=form.content.data, date=datetime.now(timezone.utc))
 
     db.session.add(scilochka)
     db.session.flush()
